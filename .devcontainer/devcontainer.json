@@ -1,0 +1,72 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.177.0/containers/dotnet-fsharp
+{
+    "name": "F# (.NET)",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            // Options
+            "INSTALL_NODE": "false",
+            "NODE_VERSION": "lts/*",
+            "INSTALL_AZURE_CLI": "false",
+            "UPGRADE_PACKAGES": "false"
+        }
+    },
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "files.autoSave": "onFocusChange",
+        "editor.fontFamily": "Fira Code",
+        "editor.fontLigatures": true,
+        "editor.cursorStyle": "block",
+        "editor.formatOnSave": true,
+        "files.trimTrailingWhitespace": true,
+        "terminal.integrated.fontFamily": "CaskaydiaCove NF, FuraCode NF, Fira Code",
+        "editor.suggest.shareSuggestSelections": true,
+        "editor.suggest.localityBonus": true,
+        "gitlens.gitCommands.skipConfirmations": [
+            "fetch:command",
+            "stash-push:command",
+            "switch:command",
+            "branch-create:command"
+        ],
+        "git.enableSmartCommit": true,
+        "editor.multiCursorMergeOverlapping": false,
+        "files.exclude": {
+            "**/.git": true,
+            "**/.svn": true,
+            "**/.hg": true,
+            "**/CVS": true,
+            "**/.DS_Store": true,
+            "**/bin": true,
+            "**/obj": true
+        },
+        "search.exclude": {
+            "**/node_modules": true,
+            "**/bower_components": true,
+            "**/*.code-search": true,
+            "**/.git": true,
+            "**/.svn": true,
+            "**/.hg": true,
+            "**/CVS": true,
+            "**/.DS_Store": true,
+            "**/bin": true,
+            "**/obj": true
+        }
+    },
+    // Add the IDs of extensions you want installed when the container is created.
+    "extensions": [
+        "aaron-bond.better-comments",
+        "eamodio.gitlens",
+        "editorconfig.editorconfig",
+        "Ionide.Ionide-fsharp",
+        "ms-dotnettools.csharp",
+        "streetsidesoftware.code-spell-checker",
+        "usernamehw.errorlens",
+    ],
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [],
+    // Use 'postCreateCommand' to run commands after the container is created.
+    // "postCreateCommand": "dotnet restore",
+    // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+    "remoteUser": "vscode"
+}
